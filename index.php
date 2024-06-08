@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="index.php" class="logo d-flex align-items-center me-auto me-lg-0">
         <h1>Quinoa<span>.</span></h1>
       </a>
 
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           data-aos="fade-up" data-aos-delay="150">
           <div class="call-us position-absolute">
             <h4>Reserva una mesa</h4>
-            <p>+34  666 000 111</p>
+            <p><a href="tel:+34666000111">+34 666 000 111</a></p>
           </div>
         </div>
         <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
@@ -188,7 +188,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               foreach ($menuItems as $item) {
                 if ($item['category'] === 'Entrante') {
                   echo '<div class="col-lg-4 menu-item">';
+                  echo '<div class="menu-img-container">';
                   echo '<a href="' . $item["img"] . '" class="glightbox"><img src="' . $item["img"] . '" class="menu-img img-fluid" alt=""></a>';
+                  echo '</div>';
                   echo '<h4>' . $item["name"] . '</h4>';
                   echo '<p class="ingredients">' . $item["descrip"] . '</p>';
                   echo '<p class="price">' . $item["price"] . '€</p>';
@@ -209,7 +211,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               foreach ($menuItems as $item) {
                 if ($item['category'] === 'Principal') {
                   echo '<div class="col-lg-4 menu-item">';
+                  echo '<div class="menu-img-container">';
                   echo '<a href="' . $item["img"] . '" class="glightbox"><img src="' . $item["img"] . '" class="menu-img img-fluid" alt=""></a>';
+                  echo '</div>';
                   echo '<h4>' . $item["name"] . '</h4>';
                   echo '<p class="ingredients">' . $item["descrip"] . '</p>';
                   echo '<p class="price">' . $item["price"] . '€</p>';
@@ -230,7 +234,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               foreach ($menuItems as $item) {
                 if ($item['category'] === 'Postre') {
                   echo '<div class="col-lg-4 menu-item">';
+                  echo '<div class="menu-img-container">';
                   echo '<a href="' . $item["img"] . '" class="glightbox"><img src="' . $item["img"] . '" class="menu-img img-fluid" alt=""></a>';
+                  echo '</div>';
                   echo '<h4>' . $item["name"] . '</h4>';
                   echo '<p class="ingredients">' . $item["descrip"] . '</p>';
                   echo '<p class="price">' . $item["price"] . '€</p>';
@@ -251,7 +257,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               foreach ($menuItems as $item) {
                 if ($item['category'] === 'Bebida') {
                   echo '<div class="col-lg-4 menu-item">';
+                  echo '<div class="menu-img-container">';
                   echo '<a href="' . $item["img"] . '" class="glightbox"><img src="' . $item["img"] . '" class="menu-img img-fluid" alt=""></a>';
+                  echo '</div>';
                   echo '<h4>' . $item["name"] . '</h4>';
                   echo '<p class="ingredients">' . $item["descrip"] . '</p>';
                   echo '<p class="price">' . $item["price"] . '€</p>';
@@ -262,51 +270,176 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
           </div>
 
-        
         </div>
       </div>
     </section>
   </main>
 
-  <section id="reserva" class="book-a-table">
-    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-        <h2>Reserva una Mesa</h2>
-        <p>Haz una <span>Reserva</span></p>
+  <section id="reserva" class="sample-page">
+      <div class="container" data-aos="fade-up">
+        <section id="book-a-table" class="book-a-table">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header">
+              <h2>Estás reservando como invitado</h2>
+              <p> <span>Reserva una Mesa</span> </p>
+            </div>
+
+            <div class="row g-0">
+
+              <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);"
+                data-aos="zoom-out" data-aos-delay="200"></div>
+
+              <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
+                <form method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                  <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
+                        data-rule="minlen:4" data-msg="Por favor introduce al menos 4 caracteres" required>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <input type="email" class="form-control" name="mail" id="mail" placeholder="Email"
+                        data-rule="email" data-msg="Por favor introduce un email válido" required>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono"
+                        data-rule="minlen:9" data-msg="Por favor introduce al menos 9 caracteres">
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <input type="date" name="date" class="form-control" id="date" placeholder="Fecha"
+                        data-rule="minlen:4" data-msg="Elige una fecha" required>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <select class="form-select" name="time" id="time" aria-label="Seleccione la hora" required>
+                        <option value="" selected>Seleccione la hora</option>
+                        <option value="13:00 - 14:00">13:00 - 14:00</option>
+                        <option value="14:00 - 15:00">14:00 - 15:00</option>
+                        <option value="15:00 - 16:00">15:00 - 16:00</option>
+                      </select>
+                      <div class="validate"></div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <select class="form-select" name="people" id="people"
+                        aria-label="Seleccione la cantidad de personas" required>
+                        <option value="" selected>Seleccione la cantidad de personas</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="7">7 personas</option>
+                        <option value="8">8 personas</option>
+                      </select>
+                      <div class="validate"></div>
+                    </div>
+
+                  </div>
+                  <div class="form-group mt-3">
+                    <textarea class="form-control" name="msg" rows="5" placeholder="Mensaje"></textarea>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="loading">Cargando</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Reserva</button></div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="row g-0">
-        <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);" data-aos="zoom-out" data-aos-delay="200"></div>
-        <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-          <form action="#reserva" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-4">
-              <div class="col-lg-6 col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombre" required>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <input type="email" class="form-control" name="mail" id="mail" placeholder="Tu Correo Electrónico" required>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Tu Teléfono" required>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <input type="date" class="form-control" name="date" id="date" placeholder="Fecha" required>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <input type="time" class="form-control" name="time" id="time" placeholder="Hora" required>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <input type="number" class="form-control" name="people" id="people" placeholder="# de Personas" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="msg" rows="5" placeholder="Mensaje"></textarea>
-            </div>
-            <div class="text-center mt-3"><button type="submit">Reserva</button></div>
-          </form>
+    </section>
+  
+  <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <p> <span>Donde Estamos</span></p>
         </div>
+
+        <div class="mb-3">
+          <iframe style="border:0; width: 100%; height: 350px;"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12528.659662422711!2d-0.6787203!3d38.2756698!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b688a219583f%3A0xec764dd7f58dd298!2sRestaurante%20Vegetariano%20Quinoa!5e0!3m2!1ses!2ses!4v1717768996067!5m2!1ses!2ses"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
+                <h3>Dirección</h3>
+                <p>Carrer Francisco Rabal, 3, 03202 Elx, Alicante</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:contacto@quinoa.com">contacto@quinoa.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Llámanos</h3>
+                <p><a href="tel:+34666000111">+34 666 000 111</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Horario</h3>
+                <div><strong>Lunes a Sábado </strong> de 13:00 a 16:00
+                  <strong>Domingo:</strong> Cerrado
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+          <div class="row">
+            <div class="col-xl-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+            </div>
+            <div class="col-xl-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Enviar</button></div>
+        </form>
+
       </div>
-    </div>
-  </section>
+    </section>
 
   <footer id="footer" class="footer">
     <div class="container">
@@ -316,8 +449,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div>
             <h4>Dirección</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
+              Carrer Francisco Rabal, 3 <br>
+              03202 Elx, Alicante<br>
             </p>
           </div>
         </div>
@@ -327,7 +460,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h4>Reservas</h4>
             <p>
               <strong>Teléfono:</strong> +34 666 000 111<br>
-              <strong>Email:</strong> quinoa@ejemplo.com<br>
+              <strong>Email:</strong> contacto@quinoa.com<br>
             </p>
           </div>
         </div>
@@ -362,7 +495,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

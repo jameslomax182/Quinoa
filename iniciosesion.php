@@ -18,7 +18,7 @@ require_once ("consultas.php");
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,14 +71,14 @@ require_once ("consultas.php");
     </div>
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-center">
-        <div class="col-lg-7">
+        <div class="col-lg-7 mt-5"> <!-- Aquí se ha agregado el margen superior -->
 
           <?php if (isset($error_login)): ?>
             <div class="alert alert-danger">
               <?php echo $error_login; ?>
             </div>
           <?php endif; ?>
-          <div class="section-title">
+          <div class="section-title margin-tio:50px">
             <h2>Inicia Sesión - Consulta tus reservas</h2>
           </div>
           <form action="consultas.php" method="post" class="form-signin">

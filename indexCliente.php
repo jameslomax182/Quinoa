@@ -66,7 +66,7 @@ $menuItems = listarMenuIndex();
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#about">Sobre Nosotros</a></li>
           <li><a href="#menu">La Carta</a></li>
-          <li><a href="#reservar">Reservar</a></li>
+          <li><a href="#reserva">Reservar</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
@@ -129,7 +129,7 @@ $menuItems = listarMenuIndex();
             </h2>
             <p data-aos="fade-up" data-aos-delay="100">Desde hace más de 10 años</p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#reservar" class="btn-book-a-table">Reserva una mesa</a>
+              <a href="#reserva" class="btn-book-a-table">Reserva una mesa</a>
             </div>
             <p class="mt-3 text-center" data-aos="fade-up" data-aos-delay="200">
               ¿Has reservado ya? <a href="#" data-bs-toggle="modal" data-bs-target="#modalReservas">Mira aquí</a>.
@@ -155,7 +155,7 @@ $menuItems = listarMenuIndex();
             data-aos="fade-up" data-aos-delay="150">
             <div class="call-us position-absolute">
               <h4>Reserva una mesa</h4>
-            <p>+34  666 000 111</p>
+            <p><a href="tel:+34666000111">+34 666 000 111</a></p>
           </div>
         </div>
         <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
@@ -359,9 +359,8 @@ $menuItems = listarMenuIndex();
       </div>
     </section>
 
-    <section id="reservar" class="sample-page">
+    <section id="reserva" class="sample-page">
       <div class="container" data-aos="fade-up">
-
         <section id="book-a-table" class="book-a-table">
           <div class="container" data-aos="fade-up">
             <div class="section-header">
@@ -371,7 +370,7 @@ $menuItems = listarMenuIndex();
 
             <div class="row g-0">
 
-              <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reserva-mesa.jpg);"
+              <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);"
                 data-aos="zoom-out" data-aos-delay="200"></div>
 
               <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
@@ -379,25 +378,25 @@ $menuItems = listarMenuIndex();
                   <div class="row gy-4">
                     <div class="col-lg-4 col-md-6">
                       <input type="text" name="name" class="form-control" id="name" placeholder="Nombre"
-                        data-rule="minlen:4" data-msg="Please enter at least 4 chars" required
+                        data-rule="minlen:4" data-msg="Por favor introduce al menos 4 caracteres" required
                         value="<?php echo isset($_SESSION['login']['name']) ? $_SESSION['login']['name'] : ''; ?>">
                       <div class="validate"></div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                       <input type="email" class="form-control" name="mail" id="mail" placeholder="Email"
-                        data-rule="email" data-msg="Please enter a valid email" required
+                        data-rule="email" data-msg="Por favor introduce un email válido" required
                         value="<?php echo isset($_SESSION['login']['mail']) ? $_SESSION['login']['mail'] : ''; ?>">
                       <div class="validate"></div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                       <input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono"
-                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                        data-rule="minlen:9" data-msg="Por favor introduce al menos 9 caracteres"
                         value="<?php echo isset($_SESSION['login']['phone']) ? $_SESSION['login']['phone'] : ''; ?>">
                       <div class="validate"></div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                       <input type="date" name="date" class="form-control" id="date" placeholder="Fecha"
-                        data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                        data-rule="minlen:4" data-msg="Elige una fecha" required>
                       <div class="validate"></div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -443,8 +442,8 @@ $menuItems = listarMenuIndex();
         </section>
       </div>
     </section>
-
-    <section id="contact" class="contact">
+    
+  <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -453,7 +452,7 @@ $menuItems = listarMenuIndex();
 
         <div class="mb-3">
           <iframe style="border:0; width: 100%; height: 350px;"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.1649168193576!2d-0.6812952240928712!3d38.27566977186349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b688a219583f%3A0xec764dd7f58dd298!2sRestaurante%20Vegetariano%20Quinoa!5e0!3m2!1ses!2ses!4v1717011459522!5m2!1ses!2ses"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12528.659662422711!2d-0.6787203!3d38.2756698!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b688a219583f%3A0xec764dd7f58dd298!2sRestaurante%20Vegetariano%20Quinoa!5e0!3m2!1ses!2ses!4v1717768996067!5m2!1ses!2ses"
             frameborder="0" allowfullscreen></iframe>
         </div>
 
@@ -474,7 +473,7 @@ $menuItems = listarMenuIndex();
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email</h3>
-                <p>contacto@quinoa.com</p>
+                <p><a href="mailto:contacto@quinoa.com">contacto@quinoa.com</a></p>
               </div>
             </div>
           </div>
@@ -484,7 +483,7 @@ $menuItems = listarMenuIndex();
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Llámanos</h3>
-                <p>+34 600 123 123</p>
+                <p><a href="tel:+34666000111">+34 666 000 111</a></p>
               </div>
             </div>
           </div>
@@ -506,22 +505,22 @@ $menuItems = listarMenuIndex();
         <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
             </div>
             <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
           </div>
           <div class="my-3">
-            <div class="loading">Loading</div>
+            <div class="loading">Cargando</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
+            <div class="sent-message">Se ha enviado tu mensaje correctamente.</div>
           </div>
           <div class="text-center"><button type="submit">Enviar</button></div>
         </form>
@@ -529,63 +528,54 @@ $menuItems = listarMenuIndex();
       </div>
     </section>
 
-    <footer id="footer" class="footer">
-
-      <div class="container">
-        <div class="row gy-3">
-          <div class="col-lg-3 col-md-6 d-flex">
-            <i class="bi bi-geo-alt icon"></i>
-            <div>
-              <h4>Dirección</h4>
-              <p>
-                Elche, Alicante<br>
-                <br>
-              </p>
-            </div>
-
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Dirección</h4>
+            <p>
+              Carrer Francisco Rabal, 3 <br>
+              03202 Elx, Alicante<br>
+            </p>
           </div>
-
-          <div class="col-lg-3 col-md-6 footer-links d-flex">
-            <i class="bi bi-telephone icon"></i>
-            <div>
-              <h4>Reservas</h4>
-              <p>
-                <strong>Teléfono:</strong> +34 666000111<br>
-                <strong>Email:</strong> quinoa@quinoa.com<br>
-              </p>
-            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Reservas</h4>
+            <p>
+              <strong>Teléfono:</strong> +34 666 000 111<br>
+              <strong>Email:</strong> contacto@quinoa.com<br>
+            </p>
           </div>
-
-          <div class="col-lg-3 col-md-6 footer-links d-flex">
-            <i class="bi bi-clock icon"></i>
-            <div>
-              <h4>Horario</h4>
-              <p>
-                <strong>Lunes a Sábado de 13:00 a 16:00</strong><br>
-                Domingos: Cerrado
-              </p>
-            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Horarios</h4>
+            <p>
+              <strong>Lunes-Sábado: 11AM</strong> - 23PM<br>
+              Domingo: Cerrado
+            </p>
           </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Follow Us</h4>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-share icon"></i>
+          <div>
+            <h4>Redes Sociales</h4>
             <div class="social-links d-flex">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-
         </div>
       </div>
-
-      <div class="container">
-        <div class="copyright">
-          &copy; <strong><span>Quinoa</span></strong>.
-        </div>
-      </div>
-
-    </footer>
+    </div>
+  </footer>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
