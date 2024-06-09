@@ -903,12 +903,16 @@ if (isset($_POST["modificar_menu"])) {
     $descrip = $_POST["descrip"];
     $category = $_POST["category"];
     $price = $_POST["price"];
-    $img = $_FILES["img"]["name"];
-    $temporal_img = $_FILES["img"]["tmp_name"];
     $state = ($_POST["state"] == "Disponible") ? 1 : 0;
 
-    $rute = "img/food/" . $img;
-    move_uploaded_file($temporal_img, $rute);
+    if ($_FILES["img"]["size"] > 0) {
+        $img = $_FILES["img"]["name"];
+        $temporal_img = $_FILES["img"]["tmp_name"];
+        $rute = "img/food/" . $img;
+        move_uploaded_file($temporal_img, $rute);
+    } else {
+        $rute = $_POST["img_actual"];
+    }
 
     $conexion = conectar();
 
@@ -1270,8 +1274,8 @@ if (isset($_GET["logout"])) {
     exit();
 }
 
-if (isset($_GET['eliminar_reserva_cliente'])) {
-    $id = $_GET['id'];
+if (isset($_POST['eliminar_reserva_cliente'])) {
+    $id = $_POST['id'];
 
     $conexion = conectar();
     if (!$conexion) {
