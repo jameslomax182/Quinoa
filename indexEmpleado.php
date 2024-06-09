@@ -8,6 +8,10 @@ if (!isset($_SESSION["login"])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION["login"]["id"]; 
+    $name = $_SESSION["login"]["name"];
+    $mail = $_SESSION["login"]["mail"];
+    $phone = $_SESSION["login"]["phone"];
 
     if (isset($_POST["eliminarUsuario"])) {
         $idUsuario = $_POST["id"];
@@ -112,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         required>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block"
-                                    name="modificar_datos">Guardar</button>
+                                    name="modificar_datos_empleado">Guardar</button>
                             </form>
                         </div>
                     </div>

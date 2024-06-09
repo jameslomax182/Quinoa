@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time = $_POST["time"];
     $people = $_POST["people"];
     $msg = $_POST["msg"];
+    
 
     if (reservarCliente($_SESSION["login"]["id"], $date, $time, $people, $msg)) {
         $sent_message = 'Su reserva fue enviada correctamente.';
@@ -111,7 +112,7 @@ $menuItems = listarMenuIndex();
                   <input type="text" class="form-control" id="floatingPhone" name="phone" placeholder="Teléfono"
                     value="<?php echo $_SESSION['login']['phone']; ?>" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" name="modificar_datos">Guardar</button>
+                <button type="submit" class="btn btn-primary btn-block" name="modificar_datos_cliente">Guardar</button>
               </form>
             </div>
           </div>
@@ -207,7 +208,7 @@ $menuItems = listarMenuIndex();
                       <td><?php echo $reserva['people']; ?></td>
                       <td>
                         <div class="d-flex align-items-center">
-                          <a href="modificarReserva.php?id=<?php echo $reserva['id']; ?>"
+                          <a href=""
                             class="btn btn-sm btn-outline-secondary bi bi-pencil"></a>
                           <form method="POST">
                             <input type="hidden" name="id" value="<?php echo $reserva['id']; ?>">
@@ -463,7 +464,8 @@ $menuItems = listarMenuIndex();
               <i class="icon bi bi-map flex-shrink-0"></i>
               <div>
                 <h3>Dirección</h3>
-                <p>Elche, Alicante</p>
+                <p>Carrer Francisco Rabal, 3 <br>
+              03202 Elx, Alicante<br></p>
               </div>
             </div>
           </div>
